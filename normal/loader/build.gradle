@@ -1,0 +1,27 @@
+plugins {
+    id 'com.github.johnrengelman.shadow'
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+    compile project(':common:loader-utils')
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand 'pluginVersion': project.ext.fullVersion
+        include 'plugin.yml'
+    }
+}
+
+shadowJar {
+    archiveName = "KumaReports-${project.ext.fullVersion}.jar"
+
+    from {
+        project(':normal').tasks.shadowJar.archiveFile
+    }
+}
+
+artifacts {
+    archives shadowJar
+}

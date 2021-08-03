@@ -1,0 +1,6 @@
+rootProject.name = 'KumaReports'
+
+['common', 'common:loader-utils', 'normal:loader', 'bungee:loader'].forEach({
+    include(it)
+})
+

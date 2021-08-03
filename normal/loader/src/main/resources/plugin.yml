@@ -1,0 +1,9 @@
+name: KumaReport
+main: com.realxode.report.normal.loader.KumaPluginLoader
+version: ${pluginVersion}
+authors: [ Xode,Zyran ]
+
+commands:
+  report:
+    description: Report command
+    aliases: [ kreport ]
