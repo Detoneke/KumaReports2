@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+// lo subo a github?
+
+group 'com.realxode'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+test {
+    useJUnitPlatform()
+}
