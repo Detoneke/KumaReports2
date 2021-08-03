@@ -1,20 +1,27 @@
-plugins {
-    id 'java'
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2' }
+    }
 }
 
-// lo subo a github?
+defaultTasks 'build'
 
-group 'com.realxode'
-version '1.0.1'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
 
-repositories {
-    mavenCentral()
-}
+    group 'com.realxode'
+    version '1.0.1'
 
-dependencies {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
-}
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
 
-test {
-    useJUnitPlatform()
+    repositories {
+        mavenCentral()
+    }
+
 }
